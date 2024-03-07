@@ -21,7 +21,6 @@ const Board = ({ onClick }) => {
 
   return (
       <>
-
           <div className="board" style={boardStyle}>
               {game.map((square, i) => (
                   <Square key={i} value={square} onClick={() => onClick(i)} />
