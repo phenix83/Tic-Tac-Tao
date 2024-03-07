@@ -27,7 +27,7 @@ h1 {
   width: 500px;
   height: 500px;
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  /* grid-template: repeat(3, 1fr) / repeat(3, 1fr); */
   gap: 1rem;
 }
 
@@ -50,6 +50,12 @@ h1 {
 .info-wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.top-navigation {
+  display: flex;
+  justify-content: space-between;
+
 }
 
 h3 {

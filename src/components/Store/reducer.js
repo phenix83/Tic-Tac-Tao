@@ -3,7 +3,11 @@ const init={
     step:0,
     gameHistory:[Array(9).fill(null)],
     xIsNext:true,
-
+    xWins:0,
+    oWins:0,
+    settings:false,
+    isPlaying:false,
+    boardSize:3
 }
 
 
@@ -30,7 +34,42 @@ const reducer=(state=init,action)=>{
                 ...state,
                 xIsNext: action.payload
             }
+        case "INCREASE_X_WINS":
+            return{
+                ...state,
+                xWins: state.xWins + 1
+            }
 
+        case "INCREASE_O_WINS":
+            return{
+                ...state,
+                oWins: state.oWins + 1
+            }
+
+        case "SET_SETTINGS":
+            return{
+                ...state,
+                settings:action.payload
+            }
+
+        case "RESET":
+            return init
+
+        case "NEW_GAME":
+            return{
+                ...state,
+                step: 0,
+                game:Array(state.boardSize * state.boardSize).fill(null),
+                gameHistory:[Array(state.boardSize * state.boardSize).fill(null)]
+            }            
+
+        case "SET_BOARD_SIZE":
+            return{
+                ...state,
+                boardSize:action.payload,
+                game:Array(action.payload*action.payload).fill(null),
+                gameHistory:[Array(action.payload*action.payload).fill(null)]
+            }
 
         default:
             return state;

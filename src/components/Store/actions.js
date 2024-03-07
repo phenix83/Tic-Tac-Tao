@@ -27,4 +27,40 @@ export const setPlayer= xIsNext=>{
     }
 }
 
+export const increaseXWins = () => {
+    return{
+        type:"INCREASE_X_WINS"
+    }
+}
 
+export const increaseOWins = () => {
+    return{
+        type:"INCREASE_O_WINS"
+    }
+}
+
+export const setSettings = (active) => {
+    return{
+        type:"SET_SETTINGS",
+        payload:active,
+    }
+}
+
+export const reset = () => {
+    return{
+        type:"RESET"
+    }
+}
+
+export const newGame = () => {
+    return{
+        type:"NEW_GAME"
+    }
+}
+
+export const setBoardSize = (size) => {
+    return{
+        type:"SET_BOARD_SIZE",
+        payload:size
+    }
+}

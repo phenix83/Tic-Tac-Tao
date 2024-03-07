@@ -1,5 +1,5 @@
 
-import {setGameInfo,setStepCount,setGameHistory,setPlayer} from '../Store/actions'
+import {setGameInfo,setStepCount,setGameHistory,setPlayer,increaseXWins as increaseXWinsAction,increaseOWins as increaseOWinsAction,setSettings as setSettingsAction, reset as resetAction, setBoardSize as setBoardSizeAction, newGame as newGameAction} from '../Store/actions'
 
 import {useDispatch} from 'react-redux'
 
@@ -39,6 +39,30 @@ const useCart = () => {
         dispatch(setPlayer(true));
     }
 
+    const increaseXWins = () => {
+        dispatch(increaseXWinsAction())
+    }
+
+    const increaseOWins = () => {
+        dispatch(increaseOWinsAction())
+    }
+
+    const setSettings = (active) => {
+        dispatch(setSettingsAction(active))
+    }
+
+    const reset = () => {
+        dispatch(resetAction())
+    }
+
+    const setBoardSize = (size) => {
+        dispatch(setBoardSizeAction(size))
+    }
+
+    const newGame = ()=>{
+        dispatch(newGameAction())
+    }
+
 
 
     return {
@@ -46,7 +70,13 @@ const useCart = () => {
         addStepCount,
         addHistory,
         addPlayer,
-        resetGame
+        resetGame,
+        increaseXWins,
+        increaseOWins,
+        setSettings,
+        reset,
+        setBoardSize,
+        newGame
     }
 
 
