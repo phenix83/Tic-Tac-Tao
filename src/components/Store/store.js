@@ -10,7 +10,7 @@ import storage from 'redux-persist/lib/storage'
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ["game","step","gameHistory","xIsNext"],
+    whitelist: ["game","step","gameHistory","xIsNext", "boardSize", "xWins", "oWins"],
 }
 const persistedReducer = persistReducer(persistConfig, reducer)
 

@@ -8,15 +8,11 @@ import useHook from "./hooks/helper";
 
 
 const Game = () => {
-  const { addItemToStorage,addStepCount,addHistory,addPlayer,setSettings, increaseOWins, increaseXWins, reset, setBoardSize, newGame }=useCart();
+  const { addItemToStorage,addStepCount,addHistory,addPlayer,setSettings, increaseOWins, increaseXWins, reset, setBoardSize, newGame } = useCart();
   const { calculateWinner }=useHook();
-  const {step,gameHistory,xIsNext,xWins,oWins,settings, boardSize}=useSelector(state=> state);
-  //const [history, setHistory] = useState([Array(9).fill(null)]);
+  const { step,gameHistory,xIsNext,xWins,oWins,settings, boardSize } = useSelector(state=> state);
   const history=[Array(9).fill(null)];
   const winner = calculateWinner();
-
-
-
   const xO = xIsNext ? "X" : "O";
 
   useEffect(()=>{
@@ -27,19 +23,13 @@ const Game = () => {
     if (winner === "O"){
       increaseOWins();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [winner]);
 
-
-
   const handleClick = (i) => {
-
     const historyPoint = gameHistory.length > 0 ? gameHistory.slice(0,step + 1): history.slice(0,step + 1);
-
     const current = historyPoint[step];
-
     const squares = [...current];
-
-
 
     if (winner || squares[i]) return;
     // select square
@@ -56,13 +46,12 @@ const Game = () => {
   };
 
   return (
-    
     <>
-        { !settings ?
+      {!settings ?
         <>
           <h1>Tic Tac Tao with React-Redux</h1>
           <div className="top-navigation">
-            <h4 onClick={()=>{setSettings(true)}} style={{cursor:"pointer"}}>Settings</h4>
+            <h4 onClick={()=>{setSettings(true)}} style={{cursor: step ? "not-allowed" : "pointer"}}>Settings</h4>
             <h4 onClick={reset} style={{cursor:"pointer"}}>Reset</h4>
           </div>
           <Board   onClick={handleClick} />
@@ -75,7 +64,7 @@ const Game = () => {
             <h4 onClick={()=>{newGame()}} style={{cursor:"pointer", display: "flex", alignSelf: "flex-start"}}>New game</h4>
           </div>
         </> :
-         <>
+        <>
           <h1>Tic Tac Tao with React-Redux</h1>
           <div style={{margin:"2rem"}}>
             <h3>Settings</h3>
@@ -87,7 +76,8 @@ const Game = () => {
             </select>
             <h4 onClick={()=>{setSettings(false)}} style={{cursor:"pointer", marginTop:"2rem"}} >Back</h4>
           </div>
-         </> }        
+        </>
+      }        
     </>
   );
 };

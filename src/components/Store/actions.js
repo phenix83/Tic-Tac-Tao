@@ -1,26 +1,25 @@
-export const setGameInfo= game=>{
+export const setGameInfo = game => {
     return{
         type:"SET_GAME_INFO",
         payload:game,
     }
 }
 
-
-export const setStepCount= step=>{
+export const setStepCount = step => {
     return{
         type:"SET_STEP",
         payload:step,
     }
 }
 
-export const setGameHistory= gameHistory=>{
+export const setGameHistory = gameHistory => {
     return{
         type:"SET_HISTORY",
         payload:gameHistory,
     }
 }
 
-export const setPlayer= xIsNext=>{
+export const setPlayer= xIsNext => {
     return{
         type:"SET_PLAYER",
         payload:xIsNext,
@@ -29,13 +28,13 @@ export const setPlayer= xIsNext=>{
 
 export const increaseXWins = () => {
     return{
-        type:"INCREASE_X_WINS"
+        type:"INCREASE_X_WINS",
     }
 }
 
 export const increaseOWins = () => {
     return{
-        type:"INCREASE_O_WINS"
+        type:"INCREASE_O_WINS",
     }
 }
 
@@ -48,19 +47,19 @@ export const setSettings = (active) => {
 
 export const reset = () => {
     return{
-        type:"RESET"
+        type:"RESET",
     }
 }
 
 export const newGame = () => {
     return{
-        type:"NEW_GAME"
+        type:"NEW_GAME",
     }
 }
 
 export const setBoardSize = (size) => {
     return{
         type:"SET_BOARD_SIZE",
-        payload:size
+        payload:size,
     }
 }

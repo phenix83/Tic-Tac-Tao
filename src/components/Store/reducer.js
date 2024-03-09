@@ -6,7 +6,6 @@ const init={
     xWins:0,
     oWins:0,
     settings:false,
-    isPlaying:false,
     boardSize:3
 }
 
@@ -47,6 +46,10 @@ const reducer=(state=init,action)=>{
             }
 
         case "SET_SETTINGS":
+            if (state.step){
+                return state;
+            }
+
             return{
                 ...state,
                 settings:action.payload
