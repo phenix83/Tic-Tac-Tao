@@ -13,9 +13,9 @@ const useHook = () => {
 
         /**
          * 
-         * @param {Array} line - line (col, row, dagonal) of the board
-         * @param {number} winFactor - number of the the same marks in a row
-         * @returns {string|null} - mark or null
+         * @param {Array} line - line (col, row, dagonal) of the board.
+         * @param {number} winFactor - number of the the same marks in a row.
+         * @returns {string|null} - mark or null.
          */
         function checkLine(line, winFactor){
             let winFactorLine = 1;
@@ -42,8 +42,8 @@ const useHook = () => {
 
         /**
          * 
-         * @param {Array} matrix - source array for finding diagonals 
-         * @returns {Array} - array of diagonals
+         * @param {Array} matrix - source array for finding diagonals.
+         * @returns {Array} - array of diagonals.
          */
         function findDiagonals(matrix) {
             const diagonals = [];
@@ -86,9 +86,9 @@ const useHook = () => {
 
         /**
          * 
-         * @param {Array} arr - one dimention array 
-         * @param {number} size - number of cols and rows
-         * @returns {Array} - two dimention array
+         * @param {Array} arr - one dimention array.
+         * @param {number} size - number of cols and rows.
+         * @returns {Array} - two dimention array.
          */
         function convertToTwoDimensionalArray(arr, size) {
             const twoDArray = [];
