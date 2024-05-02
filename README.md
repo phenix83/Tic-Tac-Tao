@@ -1,14 +1,6 @@
 # react tic-tac games with help of React,Redux and Redux-Persist
 
-Programming Task Objective
---------------------------
-
-Modify the Tic-Tac-Toe game in React.js. 
-
-The original code can be download or cloned from  
-<https://github.com/masumluf/tic-tac/>
-
-Your task is to update the application:
+Modify the application:
 1. Add "Settings" section where is possible to change board size, allowed size only 3,4,5. 
 	- This configuration affects only the board itself. 
 	- The winner of the game will be still first player placing 3 same symbols in row, column or diagonal.
